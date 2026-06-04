@@ -9,7 +9,7 @@
 const CONFIG = {
   partner1:  'Diar',           // ← Your name
   partner2:  'My Love',        // ← Her name (edit this!)
-  startDate: '2024-09-01',     // ← Your anniversary (YYYY-MM-DD)
+  startDate: '2026-06-03',     // ← Your anniversary (YYYY-MM-DD)
 };
 
 /* ================================================================
@@ -148,26 +148,46 @@ document.getElementById('hero-name1').textContent = CONFIG.partner1;
 document.getElementById('hero-name2').textContent = CONFIG.partner2;
 
 /* ================================================================
-   DAYS TOGETHER COUNTER (animated roll-up)
+   LIVE TOGETHER COUNTER — ticks every second, forever
    ================================================================ */
 
 (function initCounter() {
-  const start    = new Date(CONFIG.startDate);
-  const today    = new Date();
-  const days     = Math.max(0, Math.floor((today - start) / 86_400_000));
-  const el       = document.getElementById('days-count');
-  let current    = 0;
-  const duration = 1400;           // ms
-  const step     = 16;             // ~60fps
-  const increment = days / (duration / step);
+  const start = new Date(CONFIG.startDate);   // midnight on start date
 
-  const roll = () => {
-    current = Math.min(current + increment, days);
-    el.textContent = Math.floor(current).toLocaleString();
-    if (current < days) setTimeout(roll, step);
-  };
+  const elDays  = document.getElementById('cnt-days');
+  const elHours = document.getElementById('cnt-hours');
+  const elMins  = document.getElementById('cnt-minutes');
+  const elSecs  = document.getElementById('cnt-seconds');
 
-  setTimeout(roll, 1100);          // starts after hero animations settle
+  function pad(n) { return String(n).padStart(2, '0'); }
+
+  function tick(el, value) {
+    const next = String(value);
+    if (el.textContent === next) return;
+    el.textContent = next;
+    el.classList.remove('tick');
+    void el.offsetWidth;              // force reflow to restart animation
+    el.classList.add('tick');
+    setTimeout(() => el.classList.remove('tick'), 180);
+  }
+
+  function update() {
+    const totalMs = Math.max(0, Date.now() - start.getTime());
+    const totalSecs = Math.floor(totalMs / 1000);
+
+    const days    = Math.floor(totalSecs / 86400);
+    const hours   = Math.floor((totalSecs % 86400) / 3600);
+    const minutes = Math.floor((totalSecs % 3600) / 60);
+    const seconds = totalSecs % 60;
+
+    tick(elDays,  days.toLocaleString());
+    tick(elHours, pad(hours));
+    tick(elMins,  pad(minutes));
+    tick(elSecs,  pad(seconds));
+  }
+
+  // First paint after hero animations, then every second
+  setTimeout(() => { update(); setInterval(update, 1000); }, 1100);
 })();
 
 /* ================================================================
