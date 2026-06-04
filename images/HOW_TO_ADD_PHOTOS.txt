@@ -1,0 +1,20 @@
+HOW TO ADD YOUR PHOTOS
+======================
+
+1. Save your 5 photos with EXACTLY these filenames:
+      photo1.jpg   (bar / drinking beer photo)
+      photo2.jpg   (dark car selfie – blue light in glasses)
+      photo3.jpg   (dark car selfie – red light)
+      photo4.jpg   (dark car – Peppa Pig sticker)
+      photo5.jpg   (tilted dark car selfie)
+
+2. Put all files in this /images/ folder.
+
+3. To change stories, dates, or names: open js/app.js and edit:
+      - CONFIG  (your names and anniversary date)
+      - PHOTOS  (date, title, story, location for each photo)
+
+4. To add MORE photos later, copy one of the photo objects in the
+   PHOTOS array (in js/app.js) and add a new entry — that's it.
+
+That's all you need! No extra software required.
