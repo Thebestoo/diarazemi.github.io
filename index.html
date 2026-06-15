@@ -6,24 +6,24 @@
   <meta name="description" content="Diar Azemi — Software Developer based in Prishtina, Kosovo. Web development, C#, and full-stack engineering." />
   <title>Diar Azemi — Software Developer</title>
 
-  <!-- Prevent theme flash on load -->
   <script>
     (function () {
-      var saved = localStorage.getItem('portfolio-theme');
-      var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      var theme = saved || (prefersDark ? 'dark' : 'light');
-      document.documentElement.setAttribute('data-theme', theme);
+      var s = localStorage.getItem('portfolio-theme');
+      var p = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.setAttribute('data-theme', s || (p ? 'dark' : 'light'));
     })();
   </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
   <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- ── CURSOR GLOW (injected via JS, styled in CSS) ─────── -->
 
   <!-- ═══════════════════════════════════════════════════════
        NAVIGATION
@@ -41,21 +41,8 @@
       </ul>
 
       <button class="theme-toggle" id="theme-toggle" aria-label="Switch to light mode">
-        <!-- Icon swaps via CSS based on data-theme -->
-        <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-        </svg>
-        <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <circle cx="12" cy="12" r="5"/>
-          <line x1="12" y1="1" x2="12" y2="3"/>
-          <line x1="12" y1="21" x2="12" y2="23"/>
-          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
-          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
-          <line x1="1" y1="12" x2="3" y2="12"/>
-          <line x1="21" y1="12" x2="23" y2="12"/>
-          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
-          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
-        </svg>
+        <svg class="icon-moon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="icon-sun"  width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
       </button>
 
       <button class="nav__burger" id="nav-burger" aria-label="Open navigation" aria-expanded="false" aria-controls="nav-links">
@@ -71,56 +58,83 @@
          HERO
     ═══════════════════════════════════════════════════════ -->
     <section id="hero" class="hero" aria-labelledby="hero-name">
+      <div class="hero__bg-glow" aria-hidden="true"></div>
+
       <div class="container">
         <div class="hero__inner">
 
           <div class="hero__content">
-            <p class="hero__eyebrow">Software Developer &ensp;·&ensp; Prishtina, Kosovo</p>
+
+            <div class="hero__badge">
+              <span class="hero__badge-dot" aria-hidden="true"></span>
+              Available for work
+            </div>
 
             <h1 class="hero__name" id="hero-name">
-              Hi, I'm<br />
-              <span class="hero__name-accent">Diar Azemi</span>
+              <span class="hero__name-hi">Hi, I'm</span>
+              <span class="hero__name-main">Diar<br>Azemi</span>
             </h1>
 
+            <p class="hero__role">Software Developer</p>
+
             <p class="hero__tagline">
-              I build reliable, well-structured digital products — from web interfaces to backend systems — with an engineer's precision and a designer's eye.
+              Building solid, purposeful digital products — from web interfaces to backend systems — with an engineer's precision.
             </p>
 
+            <div class="hero__stats">
+              <div class="hero__stat">
+                <p class="hero__stat-val"><span class="counter" data-target="3">0</span><span class="hero__stat-plus">+</span></p>
+                <p class="hero__stat-label">Years Coding</p>
+              </div>
+              <div class="hero__stat-divider" aria-hidden="true"></div>
+              <div class="hero__stat">
+                <p class="hero__stat-val"><span class="counter" data-target="11">0</span><span class="hero__stat-plus">+</span></p>
+                <p class="hero__stat-label">Technologies</p>
+              </div>
+              <div class="hero__stat-divider" aria-hidden="true"></div>
+              <div class="hero__stat">
+                <p class="hero__stat-val"><span class="counter" data-target="4">0</span><span class="hero__stat-plus">+</span></p>
+                <p class="hero__stat-label">Projects Built</p>
+              </div>
+            </div>
+
             <div class="hero__actions">
-              <a href="#contact" class="btn btn--primary">Get in touch</a>
+              <a href="#contact" class="btn btn--primary" data-magnetic>Get in touch</a>
               <a href="assets/cv.pdf" class="btn btn--outline" download aria-label="Download CV as PDF">Download CV</a>
             </div>
 
             <div class="hero__socials">
-              <a href="https://linkedin.com/in/diarazemi" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                </svg>
+              <a href="https://linkedin.com/in/diarazemi" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
               </a>
-              <a href="https://github.com/Thebestoo" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                  <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
-                </svg>
+              <a href="https://github.com/Thebestoo" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
               </a>
-              <a href="https://instagram.com/diaraazemi" target="_blank" rel="noopener noreferrer" aria-label="Instagram profile">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
-                </svg>
+              <a href="https://instagram.com/diaraazemi" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
               </a>
             </div>
+
           </div>
 
           <div class="hero__visual">
-            <div class="hero__photo-wrap">
-              <img
-                src="assets/profile-photo.jpg"
-                alt="Diar Azemi, Software Developer"
-                class="hero__photo"
-                width="400"
-                height="480"
-                onerror="this.parentElement.classList.add('hero__photo-wrap--empty'); this.remove();"
-              />
-              <span class="hero__photo-initials" aria-hidden="true">DA</span>
+            <div class="hero__photo-frame">
+              <div class="hero__photo-wrap">
+                <img
+                  src="assets/profile-photo.jpg"
+                  alt="Diar Azemi, Software Developer"
+                  class="hero__photo"
+                  width="400" height="480"
+                  onerror="this.parentElement.classList.add('hero__photo-wrap--empty'); this.remove();"
+                />
+                <span class="hero__photo-initials" aria-hidden="true">DA</span>
+              </div>
+              <div class="hero__photo-frame-border" aria-hidden="true"></div>
+            </div>
+
+            <div class="hero__float-card" aria-hidden="true">
+              <div class="hero__float-card-dot"></div>
+              <span>Full-Stack Dev</span>
             </div>
           </div>
 
@@ -129,14 +143,45 @@
     </section>
 
     <!-- ═══════════════════════════════════════════════════════
+         MARQUEE TICKER
+    ═══════════════════════════════════════════════════════ -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__inner">
+        <!-- duplicated for seamless loop -->
+        <span class="marquee__item">HTML</span>
+        <span class="marquee__item">CSS</span>
+        <span class="marquee__item">JavaScript</span>
+        <span class="marquee__item">React</span>
+        <span class="marquee__item">C#</span>
+        <span class="marquee__item">Node.js</span>
+        <span class="marquee__item">PHP</span>
+        <span class="marquee__item">SQL</span>
+        <span class="marquee__item">Lua</span>
+        <span class="marquee__item">WordPress</span>
+        <span class="marquee__item">AI Agents</span>
+        <span class="marquee__item">HTML</span>
+        <span class="marquee__item">CSS</span>
+        <span class="marquee__item">JavaScript</span>
+        <span class="marquee__item">React</span>
+        <span class="marquee__item">C#</span>
+        <span class="marquee__item">Node.js</span>
+        <span class="marquee__item">PHP</span>
+        <span class="marquee__item">SQL</span>
+        <span class="marquee__item">Lua</span>
+        <span class="marquee__item">WordPress</span>
+        <span class="marquee__item">AI Agents</span>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════
          SKILLS
     ═══════════════════════════════════════════════════════ -->
     <section id="skills" class="skills section" aria-labelledby="skills-heading">
       <div class="container">
 
-        <div class="section__header reveal">
-          <span class="section__label">01 — Skills</span>
-          <h2 id="skills-heading" class="section__title">What I Work With</h2>
+        <div class="section__header">
+          <span class="section__label reveal">01 — Skills</span>
+          <h2 id="skills-heading" class="section__title reveal" data-scramble>What I Work With</h2>
         </div>
 
         <p class="skills__intro reveal">
@@ -147,30 +192,30 @@
 
           <div class="skills__group reveal">
             <h3 class="skills__group-label">Frontend</h3>
-            <div class="skills__tags" role="list">
-              <span class="tag" role="listitem">HTML</span>
-              <span class="tag" role="listitem">CSS</span>
-              <span class="tag" role="listitem">JavaScript</span>
-              <span class="tag" role="listitem">React</span>
+            <div class="skills__tags">
+              <span class="tag skill-tag">HTML</span>
+              <span class="tag skill-tag">CSS</span>
+              <span class="tag skill-tag">JavaScript</span>
+              <span class="tag skill-tag">React</span>
             </div>
           </div>
 
           <div class="skills__group reveal">
             <h3 class="skills__group-label">Backend &amp; Data</h3>
-            <div class="skills__tags" role="list">
-              <span class="tag" role="listitem">C#</span>
-              <span class="tag" role="listitem">Node.js</span>
-              <span class="tag" role="listitem">PHP</span>
-              <span class="tag" role="listitem">SQL</span>
+            <div class="skills__tags">
+              <span class="tag skill-tag">C#</span>
+              <span class="tag skill-tag">Node.js</span>
+              <span class="tag skill-tag">PHP</span>
+              <span class="tag skill-tag">SQL</span>
             </div>
           </div>
 
           <div class="skills__group reveal">
             <h3 class="skills__group-label">Tools &amp; Platforms</h3>
-            <div class="skills__tags" role="list">
-              <span class="tag" role="listitem">WordPress</span>
-              <span class="tag" role="listitem">Lua</span>
-              <span class="tag" role="listitem">AI Agents</span>
+            <div class="skills__tags">
+              <span class="tag skill-tag">WordPress</span>
+              <span class="tag skill-tag">Lua</span>
+              <span class="tag skill-tag">AI Agents</span>
             </div>
           </div>
 
@@ -184,68 +229,68 @@
     <section id="experience" class="experience section" aria-labelledby="experience-heading">
       <div class="container">
 
-        <div class="section__header reveal">
-          <span class="section__label">02 — Experience</span>
-          <h2 id="experience-heading" class="section__title">Work History</h2>
+        <div class="section__header">
+          <span class="section__label reveal">02 — Experience</span>
+          <h2 id="experience-heading" class="section__title reveal" data-scramble>Work History</h2>
         </div>
 
-        <ol class="timeline" role="list">
+        <div class="timeline">
+          <div class="timeline__track" aria-hidden="true">
+            <div class="timeline__track-fill" id="timeline-fill"></div>
+          </div>
 
-          <li class="timeline__item reveal">
-            <div class="timeline__meta">
-              <time class="timeline__period" datetime="2022/2024">2022 — 2024</time>
-            </div>
-            <div class="timeline__body">
-              <h3 class="timeline__role">Head Developer</h3>
-              <p class="timeline__org">FiveM Lua Scripting</p>
-              <p class="timeline__desc">
-                Led the development, debugging, and performance optimization of Lua scripts for Albanian FiveM roleplay servers. Oversaw code quality standards and mentored junior developers joining the team.
-              </p>
-              <div class="timeline__tags" role="list">
-                <span class="tag tag--sm" role="listitem">Lua</span>
-                <span class="tag tag--sm" role="listitem">FiveM</span>
-                <span class="tag tag--sm" role="listitem">Team Leadership</span>
+          <ol role="list">
+
+            <li class="timeline__item reveal">
+              <div class="timeline__meta">
+                <time class="timeline__period" datetime="2022/2024">2022 — 2024</time>
               </div>
-            </div>
-          </li>
-
-          <li class="timeline__item reveal">
-            <div class="timeline__meta">
-              <time class="timeline__period" datetime="2024/2025">2024 — 2025</time>
-            </div>
-            <div class="timeline__body">
-              <h3 class="timeline__role">C# Developer</h3>
-              <p class="timeline__org">Order Management System</p>
-              <p class="timeline__desc">
-                Designed and built a C# console application for managing customer orders, featuring add, edit, and remove workflows, secure admin authentication with password hashing, revenue calculations, and CSV data export.
-              </p>
-              <div class="timeline__tags" role="list">
-                <span class="tag tag--sm" role="listitem">C#</span>
-                <span class="tag tag--sm" role="listitem">.NET</span>
-                <span class="tag tag--sm" role="listitem">SQL</span>
+              <div class="timeline__body">
+                <h3 class="timeline__role">Head Developer</h3>
+                <p class="timeline__org">FiveM Lua Scripting</p>
+                <p class="timeline__desc">Led development, debugging, and performance optimization of Lua scripts for Albanian FiveM roleplay servers. Maintained code quality standards and mentored junior developers.</p>
+                <div class="timeline__tags">
+                  <span class="tag tag--sm">Lua</span>
+                  <span class="tag tag--sm">FiveM</span>
+                  <span class="tag tag--sm">Team Leadership</span>
+                </div>
               </div>
-            </div>
-          </li>
+            </li>
 
-          <li class="timeline__item reveal">
-            <div class="timeline__meta">
-              <time class="timeline__period" datetime="2025">2025 — Present</time>
-            </div>
-            <div class="timeline__body">
-              <h3 class="timeline__role">Freelance Developer</h3>
-              <p class="timeline__org">Portfolio &amp; Web Projects</p>
-              <p class="timeline__desc">
-                Delivering web projects and portfolio sites for clients while deepening practical expertise across the full frontend stack. Focused on clean architecture, performance, and maintainable code.
-              </p>
-              <div class="timeline__tags" role="list">
-                <span class="tag tag--sm" role="listitem">HTML/CSS</span>
-                <span class="tag tag--sm" role="listitem">JavaScript</span>
-                <span class="tag tag--sm" role="listitem">React</span>
+            <li class="timeline__item reveal">
+              <div class="timeline__meta">
+                <time class="timeline__period" datetime="2024/2025">2024 — 2025</time>
               </div>
-            </div>
-          </li>
+              <div class="timeline__body">
+                <h3 class="timeline__role">C# Developer</h3>
+                <p class="timeline__org">Order Management System</p>
+                <p class="timeline__desc">Designed and built a C# console application featuring secure admin login with password hashing, full order CRUD operations, search, revenue calculations, and CSV export.</p>
+                <div class="timeline__tags">
+                  <span class="tag tag--sm">C#</span>
+                  <span class="tag tag--sm">.NET</span>
+                  <span class="tag tag--sm">SQL</span>
+                </div>
+              </div>
+            </li>
 
-        </ol>
+            <li class="timeline__item reveal">
+              <div class="timeline__meta">
+                <time class="timeline__period" datetime="2025">2025 — Present</time>
+              </div>
+              <div class="timeline__body">
+                <h3 class="timeline__role">Freelance Developer</h3>
+                <p class="timeline__org">Portfolio &amp; Web Projects</p>
+                <p class="timeline__desc">Delivering web projects and portfolio sites for clients while deepening expertise across the full frontend stack. Focused on clean architecture, performance, and maintainable code.</p>
+                <div class="timeline__tags">
+                  <span class="tag tag--sm">HTML/CSS</span>
+                  <span class="tag tag--sm">JavaScript</span>
+                  <span class="tag tag--sm">React</span>
+                </div>
+              </div>
+            </li>
+
+          </ol>
+        </div>
       </div>
     </section>
 
@@ -255,151 +300,115 @@
     <section id="projects" class="projects section" aria-labelledby="projects-heading">
       <div class="container">
 
-        <div class="section__header reveal">
-          <span class="section__label">03 — Projects</span>
-          <h2 id="projects-heading" class="section__title">Selected Work</h2>
+        <div class="section__header">
+          <span class="section__label reveal">03 — Projects</span>
+          <h2 id="projects-heading" class="section__title reveal" data-scramble>Selected Work</h2>
         </div>
 
         <div class="filter-tabs reveal" role="tablist" aria-label="Filter projects by category">
           <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All</button>
-          <button class="filter-btn" data-filter="fivem" role="tab" aria-selected="false">FiveM Scripts</button>
+          <button class="filter-btn" data-filter="fivem"  role="tab" aria-selected="false">FiveM Scripts</button>
           <button class="filter-btn" data-filter="csharp" role="tab" aria-selected="false">C# Projects</button>
-          <button class="filter-btn" data-filter="mysql" role="tab" aria-selected="false">MySQL Projects</button>
+          <button class="filter-btn" data-filter="mysql"  role="tab" aria-selected="false">MySQL Projects</button>
           <button class="filter-btn" data-filter="webdev" role="tab" aria-selected="false">Web Dev</button>
         </div>
 
-        <div class="projects__grid" id="projects-grid" role="tabpanel" aria-label="Project list">
+        <div class="projects__grid" id="projects-grid" role="tabpanel">
 
-          <!-- Old Benny UI -->
           <article class="project-card reveal" data-category="fivem">
             <div class="project-card__img-wrap">
-              <img
-                src="assets/project-old-benny-ui.jpg"
-                alt="Old Benny UI — FiveM vehicle workshop interface"
-                class="project-card__img"
-                width="600" height="338"
-                loading="lazy"
-                onerror="this.parentElement.classList.add('project-card__img-wrap--empty'); this.remove();"
-              />
+              <img src="assets/project-old-benny-ui.jpg" alt="Old Benny UI — FiveM vehicle workshop interface" class="project-card__img" width="600" height="338" loading="lazy" onerror="this.parentElement.classList.add('project-card__img-wrap--empty'); this.remove();" />
               <span class="project-card__img-placeholder" aria-hidden="true">Old Benny UI</span>
+              <div class="project-card__overlay" aria-hidden="true"></div>
             </div>
             <div class="project-card__body">
               <div class="project-card__top">
                 <h3 class="project-card__title">Old Benny UI</h3>
-                <p class="project-card__desc">
-                  A customized, performance-optimized version of the classic Benny's Motorworks UI, rewritten for improved compatibility with ESX-based FiveM roleplay servers.
-                </p>
+                <p class="project-card__desc">A customized, performance-optimized version of the classic Benny's Motorworks UI, rewritten for improved ESX compatibility.</p>
               </div>
-              <div class="project-card__tags" role="list">
-                <span class="tag tag--sm" role="listitem">Lua</span>
-                <span class="tag tag--sm" role="listitem">FiveM</span>
-                <span class="tag tag--sm" role="listitem">ESX</span>
+              <div class="project-card__tags">
+                <span class="tag tag--sm">Lua</span>
+                <span class="tag tag--sm">FiveM</span>
+                <span class="tag tag--sm">ESX</span>
               </div>
               <div class="project-card__actions">
                 <a href="https://github.com/Thebestoo/Thebestoo-Fivem-Old-Benny-UI-esx" target="_blank" rel="noopener noreferrer" class="btn btn--sm btn--outline">
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
                   GitHub
                 </a>
               </div>
             </div>
           </article>
 
-          <!-- Order Management System -->
           <article class="project-card reveal" data-category="csharp">
             <div class="project-card__img-wrap">
-              <img
-                src="assets/project-oms.jpg"
-                alt="Order Management System — C# console application"
-                class="project-card__img"
-                width="600" height="338"
-                loading="lazy"
-                onerror="this.parentElement.classList.add('project-card__img-wrap--empty'); this.remove();"
-              />
+              <img src="assets/project-oms.jpg" alt="Order Management System — C# console application" class="project-card__img" width="600" height="338" loading="lazy" onerror="this.parentElement.classList.add('project-card__img-wrap--empty'); this.remove();" />
               <span class="project-card__img-placeholder" aria-hidden="true">Order Management System</span>
+              <div class="project-card__overlay" aria-hidden="true"></div>
             </div>
             <div class="project-card__body">
               <div class="project-card__top">
                 <h3 class="project-card__title">Order Management System</h3>
-                <p class="project-card__desc">
-                  A C# console application with secure admin login, password hashing, full order CRUD operations, search, revenue calculations, and CSV data export.
-                </p>
+                <p class="project-card__desc">C# console app with secure admin login, password hashing, full order CRUD, search, revenue calculations, and CSV data export.</p>
               </div>
-              <div class="project-card__tags" role="list">
-                <span class="tag tag--sm" role="listitem">C#</span>
-                <span class="tag tag--sm" role="listitem">.NET</span>
-                <span class="tag tag--sm" role="listitem">CSV Export</span>
+              <div class="project-card__tags">
+                <span class="tag tag--sm">C#</span>
+                <span class="tag tag--sm">.NET</span>
+                <span class="tag tag--sm">CSV Export</span>
               </div>
               <div class="project-card__actions">
                 <a href="https://github.com/Thebestoo/OrderManagementSystem" target="_blank" rel="noopener noreferrer" class="btn btn--sm btn--outline">
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
                   GitHub
                 </a>
               </div>
             </div>
           </article>
 
-          <!-- Library Management System -->
           <article class="project-card reveal" data-category="mysql">
             <div class="project-card__img-wrap">
-              <img
-                src="assets/project-library-db.jpg"
-                alt="Library Management System — database schema diagram"
-                class="project-card__img"
-                width="600" height="338"
-                loading="lazy"
-                onerror="this.parentElement.classList.add('project-card__img-wrap--empty'); this.remove();"
-              />
+              <img src="assets/project-library-db.jpg" alt="Library Management System — database schema" class="project-card__img" width="600" height="338" loading="lazy" onerror="this.parentElement.classList.add('project-card__img-wrap--empty'); this.remove();" />
               <span class="project-card__img-placeholder" aria-hidden="true">Library Management System</span>
+              <div class="project-card__overlay" aria-hidden="true"></div>
             </div>
             <div class="project-card__body">
               <div class="project-card__top">
                 <h3 class="project-card__title">Library Management System</h3>
-                <p class="project-card__desc">
-                  A relational database schema for a library platform, covering categories, authors, books, student records, and borrowing history with proper referential integrity.
-                </p>
+                <p class="project-card__desc">Relational database schema for a library platform covering categories, authors, books, student records, and borrowing history.</p>
               </div>
-              <div class="project-card__tags" role="list">
-                <span class="tag tag--sm" role="listitem">MySQL</span>
-                <span class="tag tag--sm" role="listitem">SQL</span>
-                <span class="tag tag--sm" role="listitem">Database Design</span>
+              <div class="project-card__tags">
+                <span class="tag tag--sm">MySQL</span>
+                <span class="tag tag--sm">SQL</span>
+                <span class="tag tag--sm">Database Design</span>
               </div>
               <div class="project-card__actions">
                 <a href="https://github.com/Thebestoo/library-managment-db" target="_blank" rel="noopener noreferrer" class="btn btn--sm btn--outline">
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
                   GitHub
                 </a>
               </div>
             </div>
           </article>
 
-          <!-- Developer Portfolio -->
           <article class="project-card reveal" data-category="webdev">
             <div class="project-card__img-wrap">
-              <img
-                src="assets/project-portfolio.jpg"
-                alt="Diar Azemi developer portfolio — website screenshot"
-                class="project-card__img"
-                width="600" height="338"
-                loading="lazy"
-                onerror="this.parentElement.classList.add('project-card__img-wrap--empty'); this.remove();"
-              />
+              <img src="assets/project-portfolio.jpg" alt="Developer portfolio website" class="project-card__img" width="600" height="338" loading="lazy" onerror="this.parentElement.classList.add('project-card__img-wrap--empty'); this.remove();" />
               <span class="project-card__img-placeholder" aria-hidden="true">Developer Portfolio</span>
+              <div class="project-card__overlay" aria-hidden="true"></div>
             </div>
             <div class="project-card__body">
               <div class="project-card__top">
                 <h3 class="project-card__title">Developer Portfolio</h3>
-                <p class="project-card__desc">
-                  This site — a hand-built personal portfolio with dark mode, scroll animations, project filtering, and a clean typographic layout. Vanilla HTML, CSS, and JS. No frameworks, no templates.
-                </p>
+                <p class="project-card__desc">This site — hand-built with a pixel particle intro, dark mode, 3D card tilt, scroll animations, and project filtering. No frameworks.</p>
               </div>
-              <div class="project-card__tags" role="list">
-                <span class="tag tag--sm" role="listitem">HTML</span>
-                <span class="tag tag--sm" role="listitem">CSS</span>
-                <span class="tag tag--sm" role="listitem">JavaScript</span>
+              <div class="project-card__tags">
+                <span class="tag tag--sm">HTML</span>
+                <span class="tag tag--sm">CSS</span>
+                <span class="tag tag--sm">JavaScript</span>
               </div>
               <div class="project-card__actions">
                 <a href="https://github.com/Thebestoo/diarazemi.github.io" target="_blank" rel="noopener noreferrer" class="btn btn--sm btn--outline">
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
                   GitHub
                 </a>
                 <a href="#" class="btn btn--sm btn--primary">Live Demo</a>
@@ -417,17 +426,15 @@
     <section id="contact" class="contact section" aria-labelledby="contact-heading">
       <div class="container">
 
-        <div class="section__header reveal">
-          <span class="section__label">04 — Contact</span>
-          <h2 id="contact-heading" class="section__title">Get in Touch</h2>
+        <div class="section__header">
+          <span class="section__label reveal">04 — Contact</span>
+          <h2 id="contact-heading" class="section__title reveal" data-scramble>Get in Touch</h2>
         </div>
 
         <div class="contact__inner">
 
           <div class="contact__copy reveal">
-            <p>
-              Whether you have a project in mind, want to discuss a collaboration, or simply want to connect — I'm available and happy to hear from you.
-            </p>
+            <p>Whether you have a project in mind, want to discuss a collaboration, or simply want to connect — I'm available and happy to hear from you.</p>
             <div class="contact__socials">
               <a href="https://linkedin.com/in/diarazemi" target="_blank" rel="noopener noreferrer" class="contact__social-link">LinkedIn ↗</a>
               <a href="https://github.com/Thebestoo" target="_blank" rel="noopener noreferrer" class="contact__social-link">GitHub ↗</a>
@@ -458,9 +465,6 @@
 
   </main>
 
-  <!-- ═══════════════════════════════════════════════════════
-       FOOTER
-  ═══════════════════════════════════════════════════════ -->
   <footer class="site-footer" role="contentinfo">
     <div class="container">
       <div class="footer__inner">
