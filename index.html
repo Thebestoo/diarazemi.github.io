@@ -93,7 +93,7 @@
               </div>
               <div class="hero__stat-divider" aria-hidden="true"></div>
               <div class="hero__stat">
-                <p class="hero__stat-val"><span class="counter" data-target="4">0</span><span class="hero__stat-plus">+</span></p>
+                <p class="hero__stat-val"><span class="counter" data-target="7">0</span><span class="hero__stat-plus">+</span></p>
                 <p class="hero__stat-label">Projects Built</p>
               </div>
             </div>
@@ -121,11 +121,11 @@
             <div class="hero__photo-frame">
               <div class="hero__photo-wrap">
                 <img
-                  src="assets/profile-photo.jpg"
+                  src="https://avatars.githubusercontent.com/u/176468531?v=4"
                   alt="Diar Azemi, Software Developer"
                   class="hero__photo"
                   width="400" height="480"
-                  onerror="this.parentElement.classList.add('hero__photo-wrap--empty'); this.remove();"
+                  crossorigin="anonymous"
                 />
                 <span class="hero__photo-initials" aria-hidden="true">DA</span>
               </div>
@@ -141,6 +141,22 @@
         </div>
       </div>
     </section>
+
+    <!-- ── GitHub strip ──────────────────────────────────────── -->
+    <div class="gh-strip" aria-label="GitHub activity summary">
+      <span class="gh-strip__item">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+        <span class="gh-strip__val">10</span> public repositories
+      </span>
+      <span class="gh-strip__item">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <span class="gh-strip__val">6</span> total stars
+      </span>
+      <span class="gh-strip__item">Active since <span class="gh-strip__val">2024</span></span>
+      <a href="https://github.com/Thebestoo" target="_blank" rel="noopener noreferrer" class="gh-strip__item" style="color:var(--accent);text-decoration:none;">
+        @Thebestoo ↗
+      </a>
+    </div>
 
     <!-- ═══════════════════════════════════════════════════════
          MARQUEE TICKER
@@ -317,13 +333,36 @@
 
           <article class="project-card reveal" data-category="fivem">
             <div class="project-card__img-wrap">
-              <img src="assets/project-old-benny-ui.jpg" alt="Old Benny UI — FiveM vehicle workshop interface" class="project-card__img" width="600" height="338" loading="lazy" onerror="this.parentElement.classList.add('project-card__img-wrap--empty'); this.remove();" />
+              <span class="project-card__img-placeholder" aria-hidden="true">ak4y-hud</span>
+              <div class="project-card__overlay" aria-hidden="true"></div>
+            </div>
+            <div class="project-card__body">
+              <div class="project-card__top">
+                <h3 class="project-card__title">ak4y-hud <span class="project-card__stars" aria-label="2 stars">&#9733; 2</span></h3>
+                <p class="project-card__desc">Fully fixed and tested version of the classic ak4y-hud script for FiveM — cleaned up, error-free, and ready to drop into any server with full UI assets intact.</p>
+              </div>
+              <div class="project-card__tags">
+                <span class="tag tag--sm">Lua</span>
+                <span class="tag tag--sm">FiveM</span>
+                <span class="tag tag--sm">HUD</span>
+              </div>
+              <div class="project-card__actions">
+                <a href="https://github.com/t4repo/Thebestoo-ak4yhud-Fully-fixed" target="_blank" rel="noopener noreferrer" class="btn btn--sm btn--outline">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                  GitHub
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-category="fivem">
+            <div class="project-card__img-wrap">
               <span class="project-card__img-placeholder" aria-hidden="true">Old Benny UI</span>
               <div class="project-card__overlay" aria-hidden="true"></div>
             </div>
             <div class="project-card__body">
               <div class="project-card__top">
-                <h3 class="project-card__title">Old Benny UI</h3>
+                <h3 class="project-card__title">Old Benny UI <span class="project-card__stars" aria-label="1 star">&#9733; 1</span></h3>
                 <p class="project-card__desc">A customized, performance-optimized version of the classic Benny's Motorworks UI, rewritten for improved ESX compatibility.</p>
               </div>
               <div class="project-card__tags">
@@ -348,7 +387,7 @@
             </div>
             <div class="project-card__body">
               <div class="project-card__top">
-                <h3 class="project-card__title">Order Management System</h3>
+                <h3 class="project-card__title">Order Management System <span class="project-card__stars" aria-label="1 star">&#9733; 1</span></h3>
                 <p class="project-card__desc">C# console app with secure admin login, password hashing, full order CRUD, search, revenue calculations, and CSV data export.</p>
               </div>
               <div class="project-card__tags">
@@ -373,7 +412,7 @@
             </div>
             <div class="project-card__body">
               <div class="project-card__top">
-                <h3 class="project-card__title">Library Management System</h3>
+                <h3 class="project-card__title">Library Management System <span class="project-card__stars" aria-label="1 star">&#9733; 1</span></h3>
                 <p class="project-card__desc">Relational database schema for a library platform covering categories, authors, books, student records, and borrowing history.</p>
               </div>
               <div class="project-card__tags">
@@ -392,7 +431,6 @@
 
           <article class="project-card reveal" data-category="webdev">
             <div class="project-card__img-wrap">
-              <img src="assets/project-portfolio.jpg" alt="Developer portfolio website" class="project-card__img" width="600" height="338" loading="lazy" onerror="this.parentElement.classList.add('project-card__img-wrap--empty'); this.remove();" />
               <span class="project-card__img-placeholder" aria-hidden="true">Developer Portfolio</span>
               <div class="project-card__overlay" aria-hidden="true"></div>
             </div>
@@ -411,7 +449,7 @@
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
                   GitHub
                 </a>
-                <a href="#" class="btn btn--sm btn--primary">Live Demo</a>
+                <a href="https://diarazemi.github.io" target="_blank" rel="noopener noreferrer" class="btn btn--sm btn--primary">Live Demo</a>
               </div>
             </div>
           </article>
@@ -446,7 +484,7 @@
             <ul class="contact__list" role="list">
               <li class="contact__item">
                 <span class="contact__label">Email</span>
-                <a href="mailto:diarazemi@outlook.com" class="contact__value link">diarazemi@outlook.com</a>
+                <a href="mailto:diar.azemi@outlook.com" class="contact__value link">diar.azemi@outlook.com</a>
               </li>
               <li class="contact__item">
                 <span class="contact__label">Phone</span>
@@ -468,7 +506,7 @@
   <footer class="site-footer" role="contentinfo">
     <div class="container">
       <div class="footer__inner">
-        <span class="footer__copy">&copy; 2025 Diar Azemi</span>
+        <span class="footer__copy">&copy; 2026 Diar Azemi</span>
         <span class="footer__tagline">Built by hand in Prishtina, Kosovo.</span>
       </div>
     </div>
