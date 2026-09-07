@@ -1,11 +1,11 @@
 /* ============================================================
    intro.js — Pixel Assembly Intro
    Timeline:
-     0 – 1.2s  SCATTER  : glowing pixels drift across the screen
-     1.2 – 2.6s CONVERGE : pixels fly into position, spelling the name
-     2.6 – 3.6s HOLD     : text pulses, progress bar fills
-     3.6 – 4.2s EXPLODE  : particles burst outward, white flash
-     4.2 – 5.2s REVEAL   : iPhone-style site emergence
+     0 – 0.5s  SCATTER  : glowing pixels drift across the screen
+     0.5 – 1.2s CONVERGE : pixels fly into position, spelling the name
+     1.2 – 1.7s HOLD     : text pulses, progress bar fills
+     1.7 – 2.1s EXPLODE  : particles burst outward, white flash
+     2.1 – 3.1s REVEAL   : iPhone-style site emergence
    ============================================================ */
 
 ;(function () {
@@ -24,10 +24,10 @@
   var N        = mobile ? 300 : 580;   // particle count
 
   var DUR = {
-    scatter:  1200,
-    converge: 1400,
-    hold:     1000,
-    explode:   600
+    scatter:   500,
+    converge:  700,
+    hold:      500,
+    explode:   400
   };
 
   /* ── Build overlay ───────────────────────────────────────── */
@@ -286,7 +286,7 @@
   }
 
   /* ── Skip button ─────────────────────────────────────────── */
-  setTimeout(function () { skipBtn.classList.add('show'); }, 1000);
+  setTimeout(function () { skipBtn.classList.add('show'); }, 400);
   skipBtn.addEventListener('click', function () {
     if (dead) return;
     cancelAnimationFrame(raf);
